@@ -1,13 +1,11 @@
-def main():
-    scores = list(map(int, input("Enter scores separated by spaces: ").split()))
+import sys
 
-    total = sum(scores)
-    avg = total / len(scores)
+scores = list(map(int, sys.argv[1:]))
 
-    print("Scores:", scores)
-    print("Sum of scores:", total)
-    print("Average score:", round(avg, 2))
+if not scores:
+    print("No scores provided")
+    exit(1)
 
-
-if __name__ == "__main__":
-    main()
+print(scores)
+print(sum(scores))
+print(sum(scores) / len(scores))
